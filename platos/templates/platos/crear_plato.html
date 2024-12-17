@@ -1,0 +1,14 @@
+{% extends 'generic_base.html' %}
+
+{% block title %}Crear Plato{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Crear Nuevo Plato</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Renderiza el formulario en párrafos -->
+            <button type="submit" class="btn btn-success">Crear Plato</button>
+        </form>
+    </div>
+{% endblock %}

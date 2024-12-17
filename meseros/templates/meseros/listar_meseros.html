@@ -1,0 +1,26 @@
+{% extends 'basic_generic.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Lista de Meseros</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Procedencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mesero in meseros %}
+            <tr>
+                <td>{{ mesero.id }}</td>
+                <td>{{ mesero.nombre }}</td>
+                <td>{{ mesero.edad }}</td>
+                <td>{{ mesero.procedencia }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'generic_base.html' %}
+
+{% block title %}Editar Plato{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center">Editar Plato: {{ plato.nombre }}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Plato</label>
+                {{ form.nombre }}  <!-- Renderiza el campo 'nombre' con la clase de Bootstrap -->
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio</label>
+                {{ form.precio }}  <!-- Renderiza el campo 'precio' con la clase de Bootstrap -->
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Actualizar Plato</button>
+        </form>
+    </div>
+{% endblock %}
